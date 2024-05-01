@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Prompt:wght@600&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Prompt", sans-serif;
+}
+
+body{
+    background:rgb(0, 0, 0);
+}
+
+/*Estilo de borde generado con el siguiente recurso web:
+
+https://unused-css.com/tools/border-gradient-generator*/
+header{
+    display: flex;
+    height: 115px;
+    width: 90%;
+    padding: 10px;
+    background: radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 3px, transparent 3px) 0% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 3px, transparent 3px) 100% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 3px, transparent 3px) 0% 100%/8px 8px no-repeat,
+                radial-gradient(circle at 0 0, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 3px, transparent 3px) 100% 100%/8px 8px no-repeat,
+                linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)) 50% 50%/calc(100% - 10px) calc(100% - 16px) no-repeat,
+                linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)) 50% 50%/calc(100% - 16px) calc(100% - 10px) no-repeat,
+                linear-gradient(136deg, transparent 20%, #42c920 100%);
+    border-radius: 8px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content:space-between;
+    margin: 10px auto;
+}
+
+footer{
+    display: flex;
+    height: 55px;
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content:space-between;
+    margin: 10px auto;
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 69%, 
+                                        rgba(36,128,0,1) 95%, 
+                                        rgba(71,255,0,1) 100%, 
+                                        rgba(170,255,169,1) 100%); 
+}
+nav{
+    background: #1b1b1b;
+    height: 100px;
+    width: 100%;
+}
+.logo{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    text-decoration: none;
+}
+.logo_img{
+    height: 80px;
+    margin-left: 10px;
+}
+.nombre{
+    display: inline-block;
+    text-wrap: nowrap;
+    border-right: 3px solid;
+    width: 12ch;
+    font-family: "Pixelify Sans", sans-serif;
+    color: #42C920;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    align-self: center;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 90px;
+}
+
+/*Configuración del estilado de los links en el navbar
+
+Otorgamos una separación de botones con padding y margin, tanto del contenido con el borde del anchor
+como entre los propios botones del menu. Establecemos un borded, una sombra y una linea exterior y las
+estilamos. Establecemos tambien la duración y el tipo de transición de los efectos del boton, simulando
+una "animación" del mismo.*/
+
+.nav_bar .links{
+    text-decoration: none;
+    color: white;
+    opacity: 80%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 5px;
+    margin-right: 25px;
+    border: 1px solid transparent;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 0px;
+    text-shadow: none;
+    -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+    outline-color: rgba(255, 255, 255, 0.5);
+    outline-offset: 0px;
+  }
+  
+  /*Igual que en el anterior apartado, acabamos de establecer los estilos y como terminará de aparecer
+  estilado el botón tras las "animaciones"*/
+  
+  .nav_bar .links:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(66, 201, 32, 0.5), 0 0 20px rgba(66, 201, 32, 0.2);
+    outline-offset: 15px;
+    outline-color: rgba(48, 240, 0, 0);
+    text-shadow: 1px 1px 2px #427388;
+  }
+li a.activo, li a:hover{
+    background: #42c9202f;
+    box-shadow: inset 0 0 20px rgba(66, 201, 32, 0.5), 0 0 20px rgba(66, 201, 32, 0.2);
+    transition: .5s;
+}
+.boton_menu{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+  
+/*Redes sociales*/
+
+.redes_sociales{
+    position: absolute;
+    left: 20px;
+    padding: 100px;
+    margin-top: 10px;
+    list-style: none;
+}
+
+.links_redes{
+    padding: 15px;
+    color:white;
+    font-size: 2.5em;
+    transition: 0.2s;
+}
+
+.links_redes:hover{
+    color:#3caee7;
+    transform: scale(1.30);
+}
+
+/*Contenido de la web*/
+
+main{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+.contenido{
+    justify-content: center;        
+    align-items: center;
+}
+
+.contenido .titulobox{
+    max-width: 600px;
+    text-align: center;
+    margin-left: 200px;
+}
+
+.contenido .titulobox h2{
+    color: white;
+    font-size: 3.5em;
+    padding-bottom: 30px;
+    white-space: nowrap;
+
+}
+.contenido .titulobox p{
+    width: 700px;
+    font-size: 2em;
+    line-height: 1.5;
+    color: white;    
+    opacity: 80%;
+    font-family: "Prompt", sans-serif;
+    font-weight: 300;
+    margin-bottom: 35px;
+
+}
+.estudios{
+    color:#42C920;
+    font-style: italic;
+}
+.contenido .titulobox a {
+    text-decoration: none;
+    color: #fff;
+    background-color:  #414547;
+    padding: 10px 30px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+}
+.contenido .titulobox a:hover {
+    box-shadow: 0 4px 16px #42C920;
+    transition: 0.2s;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-bottom: 2px solid #42C920;
+    border-radius: 20px;
+}
+.img_parrafo{
+    width: 700px;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 50%;
+    margin-right: 300px;
+    margin-top: -50px;
+    z-index: -5;
+}
+
+.img_parrafo img{
+    height: 80vh;
+}
+
+.img_parrafo img:hover{
+    height: 80vh;
+}
+
+/*Copyright*/
+
+.copyright{
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+    padding: 100px;
+}
+
+.copyright p{
+    color: white;
+    font-size: 0.9em;
+}
+
+/*Página quien soy*/
+
+/*CSS página Quien soy*/
+/*Estilo de fotografía. Colocamos la imagen en una etiqueta picture que envuelva a la etiqueta img. Estilamos la etiqueta
+picture para que tenga un color de fondo azul y una forma redonda. Luegos estilamos la imagen y con las propiedades
+mix-blend-color y filter, aplicamos una mezcla del fondo de picture y del fondo de img, al mismo tiempo que cambiamos
+la fotografía original a un formato en escala de grises.
+
+Basado en la idea de vídeo de MiduDev: https://youtu.be/_cqoYLSOLVA?si=Zo0rFP9CD2AKBJos*/
+
+.contenido_quiensoy{
+    display: flex;
+    width: 1400px;
+    margin:40px auto;
+}
+.container_textoquiensoy{
+    max-width: 1300px;
+}
+.titulo_quiensoy{
+    color: white;
+    font-size: 3.5em;
+    padding-bottom: 20px;
+    white-space: nowrap;
+    text-align: center;
+}
+.parrafo_quiensoy{
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: white;    
+    opacity: 80%;
+    text-wrap: wrap;
+    font-family: "Prompt", sans-serif;
+    font-weight: 300;
+}
+.imgdiv_quien_soy{
+    display: block;
+    height: 400px;
+    background-color: #76cbf5;
+    border: #3caee7 solid transparent;
+    margin: 75px;
+    border-radius: 800px;
+    margin-left: 90px;
+}
+.img_quiensoy{
+    height: 100%;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%);
+}
+.skill_list{
+    display: grid;
+    font-size: 1.3em;
+    color: white;
+    grid-template-columns: repeat(1, minmax(100px, 100px));
+    list-style: none;
+    text-wrap: wrap;
+    opacity: 80%;
+    margin: 80px 50px;
+}
+
+/*CSS página cv*/
+
+/*Utilizamos aquí el display flex. Con esto conseguimos que el contenido quede representado de arriba a abajo, 
+distribuyéndose equitativamente, por todo el div. Establecemos una propiedad box sizing para que la caja cumpla con las 
+medidas exactas, ajustando como considere el navegador el margin, el padding y acorde al contenido.
+
+Basado en el contenido ded Midudev: https://youtu.be/PSwlAuRbv_A?si=E46aQOjN9j_L95lk*/
+
+.curriculum{
+    display: flex;
+    box-sizing: border-box;
+    width: 1400px;
+    height: auto;
+    justify-content: center;
+    margin:auto;
+}
+.contenedor_tarjetas{
+    margin: 20px;
+}
+.titulo_contenedor{
+
+    color:white;
+    margin-left: 15px;
+}
+.tarjetas{
+    color: white;
+    font-size: 1em;
+    width: 100%;
+    padding: 20px;
+    margin: 10px;
+    border: lightgrey 1px solid;
+    border-radius: 20px;
+    overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+}
+
+.titulo_tarjeta{
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+    text-align: center;
+    color:#42C920;
+}
+
+.tarjeta1{
+    background-image: url(../img/hospital-nino-jesus.jpg);
+}
+.tarjeta2{
+    background-image: url(../img/arroyo.jpg);
+}
+.tarjeta3{
+    background-image: url(../img/spacex.jpg);
+}
+.tarjeta4{
+    background-image: url(../img/laboratorio.jpg);
+}
+.tarjeta5{
+    background-image: url(../img/MU\ Criminología.jpg);
+}
+.tarjeta6{
+    background-image: url(../img/desarrollador-web.jpg);
+}
+
+.parrafo_tarjetas{
+    margin-bottom: 5px;
+}
+.lista{
+    list-style: none;
+}
+.contenido_lista{
+    margin-left: 15px;
+}
+
+.tarjetas:hover{
+    border: #42C920 1px solid;
+}
+
+/*CSS para Proyectos*/
+
+/*Uilizamos el display grid en esta ocasion. Asignamos un ancho y un alto máximo para que las imágenes se ajusten en su ancho
+y alto de manera equitativa. Con gap, esteblecemos un espaciado entre una imagen y la siguiente. Con grid-template-columns
+asignamos el número de columnas que deseamos que ocupen el espacio, y delimitamos la proporcionalidad de las mismas. Utilizamos
+la función repeat para establecer que usaremos 3 columnas por fila, y que estas tendrán una proporción ded 1fr (una fracción)
+Para centrar el contenido asignamos un margen auto. 
+
+Basado en el contenido de Midudev: https://youtu.be/iTjkiI8QQsM?si=dDMCbumLrE7TFLNW*/
+
+.proyectos{
+    display: grid;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 600px;
+    gap: 3rem;
+    grid-template-columns:repeat(3, 1fr);
+    margin: 40px auto;
+}
+
+.img_proyecto{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 15px lightgray;
+}
+
+.img_proyecto:hover{
+    box-shadow: 0px 0px 15px #42C920;
+}
+
+.titulo_proyecto{
+    color: white;
+}
+
+/*CSS de la página contacto*/
+
+form{
+    margin: 20px auto;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    background: radial-gradient(circle at 100% 100%, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 1px, transparent 1px) 0% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 0 100%, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 1px, transparent 1px) 100% 0%/8px 8px no-repeat,
+                radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 1px, transparent 1px) 0% 100%/8px 8px no-repeat,
+                radial-gradient(circle at 0 0, rgba(0, 0, 0, 0.333) 0, rgba(0, 0, 0, 0.333) 1px, transparent 1px) 100% 100%/8px 8px no-repeat,
+                linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)) 50% 50%/calc(100% - 10px) calc(100% - 16px) no-repeat,
+                linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)) 50% 50%/calc(100% - 16px) calc(100% - 10px) no-repeat,
+                linear-gradient(136deg, transparent 20%, #42c920 100%);
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+legend{
+    color: rgba(66, 201, 32, 0.537);
+    text-shadow: 4px 4px 2px black;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+    padding-bottom: 35px;
+}
+
+label{
+    margin-left: 30px;
+    color:white;
+    font-size: 1em;
+    font-weight: bold;
+    opacity: 80%;
+}
+
+input{
+    appearance: none;
+    margin: 5px auto 10px 40px;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.333);
+    text-align: center;
+    color: rgb(66, 201, 32);
+    opacity: 80%;
+    border-radius: 5px;
+    border: 2px #414547 solid;
+}
+
+textarea{
+    margin: 5px auto 10px 40px;
+    color: rgb(66, 201, 32);
+    opacity: 80%;
+    background-color: rgba(0, 0, 0, 0.333);
+    min-height: 3em;
+    min-width: 85%;
+    border-radius: 5px;
+    border: 2px #414547 solid;
+}
+
+.label_custom{
+    display: block;
+    margin-left:30px;
+}
+.ventana:focus{
+    outline: solid 2px #42C920;
+}
+
+.Boton{
+    width: 350px;
+    color: white;
+    background-color:#1b1b1b;
+    border-radius: 5px;
+    padding: 1px 10px;
+    box-shadow: inset 1px 1px 5px grey, 2px 2px 5px grey;
+    display: block;
+    margin: 10px auto;
+}
+
+.checkbox{
+    margin:10px;
+    border: dashed 1px green ;
+    width: 20px;
+    height: 20px;
+    vertical-align: -15px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.333);
+}
+
+/*Selecciona el estado del primer hijo del elemento .checkbox*/
+.checkbox::before{
+    /*Controla el contenido que se refleja en el checkbox*/
+    content: '✓';
+    font-size: 2em;
+    /*Controla la visibilidad del elemento dentro del checkbox*/
+    visibility: hidden;
+    /*Utilizamos esta función para posicionar correctamente el contenido de checkbox que modificamos*/
+    position: absolute;
+    top: -15px;
+    right: -2px;
+}
+.checkbox:checked::before{
+    visibility: visible;
+}
+
+/*Media querys*/
+/*
+@media screen and (max-width: 992px){
+    .img_parrafo{
+        display: none;
+    }
+    .contenido .titulobox{
+        display:block;
+        margin: 100px 125px;
+        justify-content: center;
+        align-items: center;
+    }
+    .copyright{
+        display: none;
+    }
+}
+
+@media (max-width: 992px){
+    .logo{
+        padding-left: 10px;
+    }
+    header{
+        margin: 0;
+        width: 100%;
+    }
+    nav{
+        margin: 0;
+        width: 100%;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 920px){
+    .logo{
+        display: none;
+    }
+    header{
+        margin: 0;
+        width: 100%;
+    }
+    nav{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    .nav_bar.links{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 555px){
+    .boton_menu{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}*/
